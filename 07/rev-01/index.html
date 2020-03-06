@@ -3,7 +3,7 @@
 - 
 
 need to fixed:
-- when searching, display only the letter group of interest
+- display only "collection-header" letter with matched names
 
 -->
 
@@ -27,7 +27,7 @@ need to fixed:
         <h5>A</h5>
       </li>
       <li class="collection-item">
-        <a href="#">Abe</a>
+        <a href="#">Abe</a>        
       </li>
       <li class="collection-item">
         <a href="#">Adam</a>
@@ -60,10 +60,28 @@ need to fixed:
         <a href="#">Carrie</a>
       </li>
       <li class="collection-item">
+        <a href="#">Carter</a>
+      </li>
+      <li class="collection-item">
         <a href="#">Cathy</a>
       </li>
       <li class="collection-item">
         <a href="#">Courtney</a>
+      </li>
+      <li class="collection-header">
+        <h5>D</h5>
+      </li>
+      <li class="collection-item">
+        <a href="#">Delilah</a>
+      </li>
+      <li class="collection-item">
+        <a href="#">Diana</a>
+      </li>
+      <li class="collection-item">
+        <a href="#">Diego</a>
+      </li>
+      <li class="collection-item">
+        <a href="#">Drake</a>
       </li>
     </ul>
   </div>
@@ -74,17 +92,17 @@ need to fixed:
     // Add event listener
     filterInput.addEventListener('keyup', filterNames);
 
-    function filterNames(){
+    function filterNames() {
       // Get value of input
       let filterValue = document.getElementById('filterInput').value.toUpperCase();
 
       // Get names ul
       let ul = document.getElementById('names');
-      // Get lis from ul
+      // Get list from ul
       let li = ul.querySelectorAll('li.collection-item');
 
-      // Loop through collection-item lis
-      for(let i = 0;i < li.length;i++){
+      // Loop through collection-item list
+      for(let i = 0; i < li.length; i++) {
         let a = li[i].getElementsByTagName('a')[0];
         // If matched
         if(a.innerHTML.toUpperCase().indexOf(filterValue) > -1){
