@@ -48,9 +48,7 @@ function addItem(e){
   itemList.appendChild(li);
 
   // Clear inputs after submit
-  var inputsItem = document.querySelector("#item");
-  // console.log(inputsItem.value);
-  inputsItem.value = "";
+  var inputsItem = document.querySelector("#item").value = "";
 }
 
 // Remove item
