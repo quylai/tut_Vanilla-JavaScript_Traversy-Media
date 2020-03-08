@@ -1,0 +1,16 @@
+//---------------------------------------------------------------------------------
+
+
+- unsuccessful running ajax4.html with php portion, console not displaying
+  like in tut; retry this tutorial portion again see if it work properly
+  (start @ 45:00) 
+
+- installation of XAMPP did not went as
+  https://www.youtube.com/watch?v=zZ6NQRUYR2E
+
+  comments suggested checkout
+  https://tinkerbellwithtools.blogspot.com/2017/08/xamppthe-complete-guide-for.html
+  to resolve issue (work????)
+
+- stop @ 1:00:03, codes of ajax4.html and process.php are up to this point;
+  go checkout php then comeback to this... 
