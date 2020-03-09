@@ -1,0 +1,5 @@
+//---------------------------------------------------------------------------------
+
+
+- rev-01 is trying to resolve error (in browser console):
+  Deprecated API usage: No "GlobalWorkerOptions.workerSrc" specified
