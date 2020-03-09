@@ -1,0 +1,7 @@
+
+* youtube commenter: Andrii Auziak
+  change this:
+    const res = await fetch("../data/states.json");
+  to:
+    const res = await fetch("data/states.json");
+

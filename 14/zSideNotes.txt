@@ -3,3 +3,9 @@
 
 - rev-01 is trying to resolve error (in browser console):
   Deprecated API usage: No "GlobalWorkerOptions.workerSrc" specified
+
+  resolution:
+  change
+    const url = '../docs/pdf.pdf';:
+  to
+    const url = 'docs/pdf.pdf';
