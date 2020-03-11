@@ -1,0 +1,8 @@
+//---------------------------------------------------------------------------------
+rev. notes
+
+objectivs:
+  - test out various css functionality
+
+changed:
+  - photos are linked via http rather than local directory links
