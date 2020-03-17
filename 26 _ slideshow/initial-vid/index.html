@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <img name="slide" width="400" height="200">
+
+  <script>
+    var i = 0; // Start point
+    var images = [];
+    var time = 3000;
+  
+    // Image List
+    images[0] = "http://via.placeholder.com/640x361";
+    images[1] = "http://via.placeholder.com/640x362";
+    images[2] = "http://via.placeholder.com/640x363";
+    images[3] = "http://via.placeholder.com/640x364";
+
+    // Change Image
+    function changeImg() {
+      document.slide.src = images[i];
+
+      if(i < images.length - 1) {
+        i++;
+      } else {
+        i = 0;
+      }
+
+      setTimeout("changeImg()", time);
+    }
+
+    window.onload = changeImg;
+
+  </script>  
+</body>
+</html>
+
