@@ -1,0 +1,139 @@
+//---------------------------------------------------------------------------------
+
+While following tut vid, the following deviation needed to be made:
+
+* for installing npm:
+    @babel/core @babel/preset-env webpack-cli
+  instead of
+    babel-core babel-preset-env
+
+
+* 
+---- from
+const path = require("path");
+
+module.exports = {
+  entry: {
+    app: "./src/app.js"
+  },
+  output: {
+    path: path.resolve(__dirname, "build"),
+    filename: "app.bundle.js"
+  },
+  module: {
+    loaders: [{
+      test: /\.js?$/,
+      exclude: /node_modules/,
+      loader: "babel-loader",
+      query: {
+        presets: ["env"]
+      }
+    }]
+  }
+}
+
+---- to
+const path = require("path");
+
+module.exports = {
+  entry: {
+    app: "./src/app.js"
+  },
+  output: {
+    path: path.resolve(__dirname, "build"),
+    filename: "app.bundle.js"
+  },
+  module: {
+    rules: [{
+      test: /\.js?$/,
+      exclude: /node_modules/,
+      loader: "babel-loader",
+      query: {
+        presets: ["@babel/preset-env"]
+      }
+    }]
+  },
+  mode: "none"
+}
+----
+
+
+* this is final modification of webpack.config.js
+---- from
+const path = require("path");
+
+module.exports = {
+  entry: {
+    app: ["@babel/polyfill", "./src/app.js"]
+  },
+  output: {
+    path: path.resolve(__dirname, "build"),
+    filename: "app.bundle.js"
+  },
+  module: {
+    rules: [{
+      test: /\.js?$/,
+      exclude: /node_modules/,
+      loader: "babel-loader",
+      query: {
+        presets: ["@babel/preset-env", "stage-0"]
+      }
+    }]
+  },
+  mode: "none"
+}
+
+---- to
+const path = require("path");
+
+module.exports = {
+  entry: {
+    app: ["@babel/polyfill", "./src/app.js"]
+  },
+  output: {
+    path: path.resolve(__dirname, "build"),
+    filename: "app.bundle.js"
+  },
+  module: {
+    rules: [{
+      test: /\.js?$/,
+      exclude: /node_modules/,
+      loader: "babel-loader",
+      query: {
+        presets: ["@babel/preset-env"]
+      }
+    }]
+  },
+  mode: "none"
+}
+----
+
+
+* total npm installs should result package.json to be:
+----
+{
+  "name": "initial-vid",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "start": "webpack-dev-server --output-public-path=/build/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.8.7",
+    "@babel/polyfill": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
+    "babel-loader": "^8.0.6",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  }
+}
+----
