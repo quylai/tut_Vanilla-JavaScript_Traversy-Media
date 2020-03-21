@@ -1,0 +1,8 @@
+//---------------------------------------------------------------------------------
+
+* to get the local server running, make sure npm "parcel" installed globally, 
+  then do command (in terminal):
+    parcel index.html
+  enter localhost mentioned onto a browser
+
+
