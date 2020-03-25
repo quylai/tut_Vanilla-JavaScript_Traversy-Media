@@ -1,0 +1,10 @@
+//---------------------------------------------------------------------------------
+
+* icon for browser tab
+  go to:
+    tools.dynamicdrive.com/favicon
+  upload chosen .png, download, put .ico graphic at root of your application
+  paste
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  in <head></head> 
+
